@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+
+    <!--Google Font CDN-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <!--Internal CSS Concept-->
+    <style>
+        * {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 70px;
+            /*             margin-left: 3rem;
+                    margin-right: 3rem; */
+            background-color: #f5f7fa;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 4rem;
+        }
+
+        nav div a {
+            margin-left: 4rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #link {
+            background-color: #4caf50;
+            border-radius: 6px;
+            gap: 10px;
+            padding: 10px 20px 10px 20px;
+            color: white;
+        }
+
+        #login {
+            background-color: #f5f7fa;
+            border-radius: 6px;
+            padding: 10px 20px 10px 20px;
+            color: #4caf50;
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2rem;
+            background-color: #f5f7fa;
+            padding: 96px 144px 96px 144px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .hero-title {
+            line-height: 76px;
+            font-size: 64px;
+        }
+
+        .hero-title span {
+            color: #4caf50;
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: grey;
+            line-height: 24px;
+        }
+
+        .dots-container {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot-active {
+            width: 10px;
+            height: 10px;
+            background-color: #4caf50;
+            border-radius: 50%;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #register {
+            background-color: #4caf50;
+            border-radius: 4px;
+            padding: 14px 32px 14px 32px;
+            color: white;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .clients {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 144px;
+            padding-right: 144px;
+            gap: 16px;
+            margin-top: 35px;
+        }
+
+        .clients h1 {
+            font-size: 36px;
+            line-height: 44px;
+        }
+
+        .clients p {
+            font-size: 16px;
+            line-height: 24px;
+            color: grey;
+        }
+
+        .community-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .community-content h1 {
+            font-size: 36px;
+            line-height: 44px;
+            color: #4d4d4d;
+            gap: 8px;
+        }
+
+        .community-content span {
+            display: block;
+            align-content: center;
+            color: #4d4d4d;
+            text-align: center;
+        }
+
+        .community-content p {
+            font-size: 16px;
+            line-height: 24px;
+            color: #4d4d4d;
+        }
+
+        .community {
+            margin-top: 40px;
+        }
+
+        .community-cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 24px 144px;
+        }
+
+        .community-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(171, 190, 209, 0.2);
+            flex: 1;
+        }
+
+        .community-card h1 {
+            color: #4d4d4d;
+            font-size: 24px;
+            line-height: 30px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .community-card p {
+            font-size: 14px;
+            line-height: 20px;
+            color: #717171;
+        }
+
+        .community-card img {
+            margin-bottom: 10px;
+        }
+
+        .lock {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 144px;
+            padding-left: 144px;
+        }
+
+        .calendar {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 144px;
+            padding-left: 144px;
+        }
+
+        .frame-5 {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .frame-6 {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 661px;
+            height: 308px;
+        }
+
+        #learn-more {
+            background-color: #4caf50;
+            border-radius: 4px;
+            padding: 14px 32px 14px 32px;
+            color: white;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .frame-5 h1 {
+            color: #4d4d4d;
+            font-size: 36px;
+            line-height: 44px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            width: 590px;
+            height: 88px;
+        }
+
+        .frame-6 h1 {
+            color: #4d4d4d;
+            font-size: 36px;
+            line-height: 44px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            width: 601px;
+            height: 88px;
+            font-weight: 600;
+        }
+
+        .frame-5 p {
+            font-size: 14px;
+            line-height: 20px;
+            color: #717171;
+            width: 601px;
+            height: 80px;
+        }
+
+        .frame-6 p {
+            font-size: 14px;
+            line-height: 20px;
+            color: #717171;
+            width: 601px;
+            height: 120px;
+            font-weight: 400;
+        }
+
+        .achievements {
+            display: flex;
+            justify-content: space-between;
+            padding: 64px 144px 64px 144px;
+            background-color: #f5f7fa;
+        }
+
+        .counts {
+            width: 540px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .counts h1 {
+            width: 191px;
+            height: 36px;
+            font-size: 28px;
+            line-height: 36px;
+            font-weight: 700;
+            color: #4d4d4d;
+        }
+
+        .counts p {
+            width: 191px;
+            height: 24px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #717171;
+        }
+
+        .counts-row1 {
+            width: 540px;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: -20px;
+        }
+
+        .counts-row2 {
+            width: 540px;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        .achievements-content {
+            width: 540px;
+            height: 120px;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .achievements-content h2 {
+            font-size: 36px;
+            line-height: 44px;
+            width: 408px;
+            height: 88px;
+            color: #4d4d4d;
+            font-weight: 600;
+            gap: 8px;
+        }
+
+        .achievements-content span {
+            color: #4caf50;
+            display: block;
+        }
+
+        .achievements-content p {
+            font-size: 16px;
+            color: #18191f;
+            line-height: 24px;
+            width: 540px;
+            height: 24px;
+            font-weight: 400;
+        }
+
+        .customers {
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            padding: 32px 144px 32px 144px;
+            gap: 78px;
+            background-color: #F5F7FA;
+        }
+
+        .frame11 {
+            width: 748px;
+            height: 324px;
+            gap: 32px;
+            display: flex;
+            flex-direction: column
+        }
+
+        .content {
+            margin-top: 10px;
+            width: 748px;
+            height: 244px;
+            gap: 16px;
+        }
+
+        .content p {
+            width: 748px;
+            height: 168px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            vertical-align: middle;
+            color: #717171;
+        }
+
+        .frame7 {
+            width: 748px;
+            height: 60px;
+            gap: 8px;
+        }
+
+        .frame7 h1 {
+            width: 748px;
+            height: 28px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            vertical-align: middle;
+            color: #4CAF4F;
+            margin-top: 10px;
+        }
+
+        .frame7 p {
+            width: 748px;
+            height: 24px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            vertical-align: middle;
+            color: #89939E;
+            margin-top: 8px;
+        }
+
+        .image9 {
+            width: 326px;
+            height: 326px;
+            border-radius: 8px;
+        }
+
+        .frame14 {
+            display: flex;
+            width: 748px;
+            height: 48px;
+            gap: 32px;
+        }
+
+        .frame10 {
+            width:"493px";
+            height:"48px";
+            gap: 41px;
+        }
+
+        .frame13 {
+            display: flex;
+        }
+
+        .frame13 h1 {
+            width: 188px;
+            height: 28px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            vertical-align: middle;
+            color: #4CAF4F;
+        }
+
+        .arrow {
+            width: 24px;
+            height: 24px;
+        }
+
+        .community2-updates {
+            width: 100%;
+            max-width: 1440px;
+            margin: 60px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .community2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 1110px;
+            gap: 8px;
+        }
+
+        .community2 h1 {
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 44px;
+            color: #4d4d4d;
+        }
+
+        .community2 p {
+            max-width: 628px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #717171;
+        }
+
+        .frame15 {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 24px;
+            padding: 0 144px;
+            box-sizing: border-box;
+        }
+
+        .card1,
+        .card2,
+        .card3 {
+            width: 368px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .image18,
+        .card1 div[class*="image"] {
+            width: 368px;
+            height: 286px;
+        }
+
+        .image18 img,
+        .card1 img,
+        .card2 img,
+        .card3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card1-content,
+        .card2-content,
+        .card3-content {
+            width: 317px;
+            background-color: #f5f7fa;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: -80px;
+            position: relative;
+            box-shadow: 0px 8px 16px rgba(171, 190, 209, 0.2);
+        }
+
+        .card1-content p,
+        .card2-content p,
+        .card3-content p {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            color: #717171;
+            text-align: center;
+        }
+
+        .card-readmore {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .card-readmore span {
+            font-weight: 600;
+            font-size: 18px;
+            color: #4caf4f;
+        }
+
+        .card-readmore img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #263238;
+        }
+
+        .frame16 {
+            width: 100%;
+            background-color: #f5f7fa;
+            padding: 32px 144px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 32px;
+        }
+
+        .frame16 h1 {
+            max-width: 887px;
+            font-weight: 600;
+            font-size: 54px;
+            line-height: 64px;
+            color: #263238;
+        }
+
+        #getdemo {
+            background-color: #4caf50;
+            border-radius: 4px;
+            padding: 14px 32px;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-big {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 64px 144px;
+            background-color: #263238;
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 350px;
+        }
+
+        .links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .copyright p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #f5f7fa;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .col1 h4,
+        .col2 h4,
+        .col3 h4 {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .list-items ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-items a {
+            color: #f5f7fa;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .email-sub {
+            display: flex;
+            align-items: center;
+            width: 255px;
+            height: 40px;
+            background-color: #ffffff33;
+            border-radius: 8px;
+            padding: 0 8px 0 12px;
+            box-sizing: border-box;
+        }
+
+        .email-sub input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .email-sub input::placeholder {
+            color: #d1d5db;
+        }
+
+        .email-sub button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        #send-icon {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav width="100%">
+        <img src="images/Logo.svg" alt="Logo" width="150px" />
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Feature</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Testimonial</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+
+        <div>
+            <a href="#" id="login">Login</a>
+            <a href="#" id="link">Sign up</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Lessons and insights
+                <span>from 8 years</span>
+            </h1>
+            <p class="hero-subtitle">
+                Where to grow your business as a photographer: site or social media?
+            </p>
+
+            <div class="register">
+                <a href="#" id="register">Register</a>
+            </div>
+        </div>
+        <div class="illustration">
+            <img src="images/Illustration.svg" alt="Illustration" width="391px" height="407px" />
+        </div>
+        <div class="dots-container">
+            <span class="dot-active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <section class="clients">
+        <h1>Our Clients</h1>
+        <p>We have been working with some Fortune 500+ clients</p>
+        <img src="images/Clients Logos.svg" alt="Clients Logos" width="1152px" height="98px" />
+    </section>
+
+    <section class="community">
+        <div class="community-content">
+            <h1>Manage your entire community <span>in a single system</span></h1>
+            <p>Who is Nextcent suitable for?</p>
+        </div>
+
+        <div class="community-cards-container">
+            <div class="community-card">
+                <img src="images/org.svg" alt="org" width="48px" height="48px" />
+                <h1>Membership Organisations</h1>
+                <p>
+                    Our membership management software provides full automation of membership renewals and payments
+                </p>
+            </div>
+            <div class="community-card">
+                <img src="images/associations.svg" alt="associations" width="65px" height="56px" />
+                <h1>National Associations</h1>
+                <p>
+                    Our membership management software provides full automation of membership renewals and payments
+                </p>
+            </div>
+            <div class="community-card">
+                <img src="images/groups.svg" alt="groups" width="65px" height="56px" />
+                <h1>Clubs And Groups</h1>
+                <p>
+                    Our membership management software provides full automation of membership renewals and payments
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="lock">
+        <div class="frame-35">
+            <img src="images/Frame 35.svg" alt="Frame 35" width="442px" height="433px" />
+        </div>
+        <div class="frame-5">
+            <h1>The unseen of spending three years at Pixelgrade</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta. Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium
+                auctor. Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum pulvinar odio.
+            </p>
+
+            <div>
+                <a href="#" id="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements">
+        <div class="achievements-content">
+            <h2>Helping a local <span>business reinvent itself</span></h2>
+            <p>We reached here with our hard work and dedication</p>
+        </div>
+        <div class="counts">
+            <div class="counts-row1">
+                <div class="members">
+                    <img src="images/members.svg" alt="members" />
+                    <h1>2,245,341</h1>
+                    <p>Members</p>
+                </div>
+                <div class="clubs">
+                    <img src="images/clubs.png" alt="clubs" />
+                    <h1>46,328</h1>
+                    <p>Clubs</p>
+                </div>
+            </div>
+            <div class="counts-row2">
+                <div class="bookings">
+                    <img src="images/bookings.svg" alt="event-bookings" />
+                    <h1>828,867</h1>
+                    <p>Event Bookings</p>
+                </div>
+                <div class="payments">
+                    <img src="images/payments.svg" alt="payments" />
+                    <h1>1,926,436</h1>
+                    <p>Payments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calendar">
+        <div class="mobile-login-pana">
+            <img src="images/pana.svg" alt="pana" width="441.53px" height="433.4px" />
+        </div>
+        <div class="frame-6">
+            <h1>How to design your site footer like we did</h1>
+            <p>
+                Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo
+                dui, at porta nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis libero.
+                Donec consectetur faucibus ipsum id gravida..
+            </p>
+
+            <div>
+                <a href="#" id="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="customers">
+        <div class="image9">
+            <img src="images/image 9.svg" alt="image9" />
+        </div>
+
+        <div class="frame11">
+            <div class="content">
+                <p>
+                    Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi
+                    laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim
+                    sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
+                </p>
+                <div class="frame7">
+                    <h1>Tim Smith</h1>
+                    <p>British Dragon Boat Racing Association</p>
+                </div>
+            </div>
+            <div class="frame14">
+                <div class="frame10">
+                    <img src="images/Frame 10.svg" alt="frame10" />
+                </div>
+                <div class="frame13">
+                    <h1>Meet all customers</h1>
+                    <div class="arrow">
+                        <img src="images/Right.svg" alt="arrow-right" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community2-updates">
+        <div class="community2">
+            <h1>Caring is the new marketing</h1>
+            <p>
+                The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​
+            </p>
+        </div>
+        <div class="frame15">
+            <div class="card1">
+                <div class="image18">
+                    <img src="images/image 18.svg" alt="image18" />
+                </div>
+                <div class="card1-content">
+                    <p>Creating Streamlined Safeguarding Processes with OneRen</p>
+                    <a href="#" class="card-readmore">
+              <span>Readmore</span>
+              <img src="images/Right.svg" alt="arrow-right" />
+            </a>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="image19">
+                    <img src="images/image 19.svg" alt="image19" />
+                </div>
+                <div class="card2-content">
+                    <p>
+                        What are your safeguarding responsibilities and how can you manage them?
+                    </p>
+                    <a href="#" class="card-readmore">
+              <span>Readmore</span>
+              <img src="images/Right.svg" alt="arrow-right" />
+            </a>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="image20">
+                    <img src="images/image 20.svg" alt="image20" />
+                </div>
+                <div class="card3-content">
+                    <p>Revamping the Membership Model with Triathlon Australia</p>
+                    <a href="#" class="card-readmore">
+              <span>Readmore</span>
+              <img src="images/Right.svg" alt="arrow-right" />
+            </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="frame16">
+            <div>
+                <h1>Pellentesque suscipit fringilla libero eu.</h1>
+            </div>
+            <div class="button-getdemo">
+                <a href="#" id="getdemo">
+            Get a Demo
+            <span><img src="images/Right-white.svg" alt="right-arrow" /></span>
+          </a>
+            </div>
+        </div>
+
+        <div class="footer-big">
+            <div class="company-info">
+                <div class="company-logo">
+                    <img src="images/company-info-logo.svg" alt="company-logo" />
+                </div>
+                <div class="copyright">
+                    <p>Copyright © 2020 Nexcent ltd.</p>
+                    <br />
+                    <p>All rights reserved</p>
+                </div>
+                <div class="social-links">
+                    <div class="instagram">
+                        <img src="images/instagram.svg" alt="instagram" />
+                    </div>
+                    <div class="pica"><img src="images/pica.svg" alt="pica" /></div>
+                    <div class="twitter"><img src="images/twitter.svg" alt="twitter" /></div>
+                    <div class="youtube"><img src="images/youtube.svg" alt="youtube" /></div>
+                </div>
+            </div>
+            <div class="links">
+                <div class="col1">
+                    <h4>Company</h4>
+                    <div class="list-items">
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col2">
+                    <h4>Support</h4>
+                    <div class="list-items">
+                        <ul>
+                            <li><a href="#">Help center</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Legal</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Status</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col3">
+                    <h4>Stay up to date</h4>
+
+                    <div class="email-sub">
+                        <input type="email" placeholder="Your email address" />
+                        <button type="submit">
+                <img id="send-icon" src="images/send.svg" alt="send" />
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
